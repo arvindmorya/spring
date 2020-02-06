@@ -18,8 +18,11 @@ spring:
     store-type: redis
   security:
     user:
-      name: gateway
+      name: bs
       password: password
+  redis:
+    host: localhost
+    port: 6379
     
 #eureka:         #tells about the Eureka server details and its refresh time
 #  instance:

@@ -5,19 +5,20 @@ spring:
     name: api-gateway
   session:
     store-type: redis
-  security:
-    user:
-      name: gateway
-      password: password
+  redis:
+    host: localhost
+    port: 6379
+   
 # routing for service 1
 zuul:
   retryable: true
   routes:
     book-service:
       path: /api/book-service/**
-      url: http://localhost:8081/
+#      url: http://localhost:8081/
 # routing for service 2
     review-service:
       path: /api/review-service/**
-      url: http://localhost:8082/
-#  sensitiveHeaders: Authorization, Set-Cookie
+#      url: http://localhost:8082/
+  sensitiveHeaders: 
+
